@@ -1,0 +1,21 @@
+<ul>
+    {{#each model as |post|}}
+    <li>
+        {{#link-to "post" post.id}}
+            {{post.title}}
+        {{/link-to}}
+
+        <button {{on "click" (fn this.deletePost post) }} type="button">
+            Delete
+        </button>
+
+        {{#link-to 'edit' post.id}}
+            Edit
+        {{/link-to}}
+            
+        
+    </li>
+
+    {{/each}}
+</ul>
+{{outlet}}
